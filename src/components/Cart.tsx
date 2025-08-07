@@ -1,5 +1,5 @@
 import { ShoppingCart } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 
 const Cart = () => {
     return (
@@ -10,7 +10,11 @@ const Cart = () => {
                     0
                 </span>
             </SheetTrigger>
-            
+            <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
+                <SheetHeader className="space-y-2.5 pr-6">
+                    <SheetTitle>Cart (0)</SheetTitle>
+                </SheetHeader>
+            </SheetContent>
         </Sheet>
     );
 }
