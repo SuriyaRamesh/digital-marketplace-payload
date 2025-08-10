@@ -16,16 +16,16 @@ const Cart = () => {
                 </span>
             </SheetTrigger>
             <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
-                <SheetHeader className="space-y-2.5 pr-6">
+                <SheetHeader className="space-y-2.5 pr-6 items-center">
                     <SheetTitle>Cart (0)</SheetTitle>
                 </SheetHeader>
                 {itemCount > 0 ? (
                     <>
-                    <div className="flex w-full flex-col pr-6">
+                    <div className="flex w-full flex-col pr-6 pb-5 m-4 border-b border-gray-200">
                         {/* {TODO: cart logic} */}
-                        cart items
+                        Cart items
                     </div>
-                    <div className="space-y-4 pr-6">
+                    <div className="space-y-4 pr-6 p-4">
                         <Separator />
                         <div className="space-y-1.5 text-sm">
                             <div className="flex">
