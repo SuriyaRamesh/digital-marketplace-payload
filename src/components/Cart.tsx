@@ -1,7 +1,8 @@
-import { ShoppingCart } from "lucide-react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { Link, ShoppingCart } from "lucide-react";
+import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import { Separator } from "@radix-ui/react-separator";
 import { formatPrice } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
 
 const Cart = () => {
 
@@ -42,6 +43,14 @@ const Cart = () => {
                                 <span>{formatPrice(fee)}</span>
                             </div>
                         </div>
+
+                        <SheetFooter>
+                            <SheetTrigger asChild>
+                                <Link href="/cart" className={buttonVariants({className: 'w-full'})}>
+                                    Continue to checkout
+                                </Link>
+                            </SheetTrigger>
+                        </SheetFooter>
                     </div>
                     </>
                 ) : (<div></div>)}
