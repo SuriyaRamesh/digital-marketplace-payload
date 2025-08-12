@@ -1,12 +1,14 @@
-import { Link, ShoppingCart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import { Separator } from "@radix-ui/react-separator";
 import { formatPrice } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
+import Image from "next/image";
+import Link from "next/link";
 
 const Cart = () => {
 
-    const itemCount = 1;
+    const itemCount = 0;
     const fee = 1;
 
     return (
@@ -53,7 +55,17 @@ const Cart = () => {
                         </SheetFooter>
                     </div>
                     </>
-                ) : (<div></div>)}
+                ) : (
+                <div className="flex h-full flex-col items-center justify-center space-y-1">
+                    <div aria-hidden='true' className="relative mb-4 size-60 text-muted-foreground">
+                        <Image src='/hippo-empty-cart.png' alt='Empty shopping cart hippo' fill />
+                    </div>
+                    <div className="text-xl font-semibold">Your cart is empty :(</div>
+                    <SheetTrigger asChild>
+                        <Link href="/products" className={buttonVariants({variant: 'link', size: 'sm', className: 'text-sm text-blue-600'})}>Add items to your cart to checkout</Link>
+                    </SheetTrigger>
+                </div>
+                )}
             </SheetContent>
         </Sheet>
     );
